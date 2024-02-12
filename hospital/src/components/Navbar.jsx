@@ -42,7 +42,7 @@ export default function Navbar() {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link ">Reports</a>
+            <a className="nav-link " href="#" >Reports</a>
           </li>
           <NavLink
             className={({ isActive }) => {
