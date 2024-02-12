@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <div>
       <div>
-        <div className="inline">
+        <div className="absolute ml-8">
           <img
             className="max-h-10  justify-items-start rounded-2xl"
             src={c2}
