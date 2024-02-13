@@ -9,15 +9,15 @@ import im2 from "../assets/im2.jpg";
 export default function Navbar() {
   return (
     <div >
-      <div className="relative" >
-        <div className="absolute ml-8">
+      <div className="relative mb-2" >
+        <div className="absolute ml-8 ">
           <img
-            className="max-h-10  justify-items-start rounded-2xl"
+            className="max-h-10  justify-items-start rounded-3xl mt-1"
             src={c2}
             alt="no image foound"
           />
         </div>
-        <ul className="nav justify-content-center">
+        <ul className="nav justify-content-center ">
           <li className="nav-item px-6"></li>
           <NavLink
             className={({ isActive }) => {
