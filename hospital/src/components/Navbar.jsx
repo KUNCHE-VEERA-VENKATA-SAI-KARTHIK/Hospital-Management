@@ -8,8 +8,8 @@ import im2 from "../assets/im2.jpg";
 
 export default function Navbar() {
   return (
-    <div>
-      <div>
+    <div >
+      <div className="relative" >
         <div className="absolute ml-8">
           <img
             className="max-h-10  justify-items-start rounded-2xl"
@@ -48,12 +48,15 @@ export default function Navbar() {
             className={({ isActive }) => {
               isActive ? "font-bold" : "normal";
             }}
-            to="Login"
-          >
-            <li className="nav-item">
+            to="Login">
+              <div className="absolute ml-[400px]">
+              <li className="nav-item">
               <a className="nav-link ">Login</a>
-            </li>
+              </li>
+              </div>
+
           </NavLink>
+
         </ul>
       </div>
     </div>
