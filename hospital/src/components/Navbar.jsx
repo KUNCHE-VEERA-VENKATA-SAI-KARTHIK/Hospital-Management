@@ -31,11 +31,18 @@ export default function Navbar() {
               </a>
             </li>
           </NavLink>
+          <NavLink
+            className={({ isActive }) => {
+              isActive ? "normal" : "underline";
+            }}
+            to="Pharmacy"
+          >
           <li className="nav-item">
             <a className="nav-link" href="#">
               Pharmacy
             </a>
           </li>
+          </NavLink>
           <li className="nav-item">
             <a className="nav-link" href="#">
               Lab tests
