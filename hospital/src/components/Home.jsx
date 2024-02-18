@@ -3,9 +3,12 @@ import c2 from "../assets/k2.png";
 import c1 from "../assets/c1.jpg";
 import im1 from "../assets/im1.jpg";
 import im2 from "../assets/im2.jpg";
+import Tiles from "./Tiles";
 
 export default function Home() {
   return (
+    <>
+
     <div>
       {/* carosel */}
       <div
@@ -50,5 +53,7 @@ export default function Home() {
         </button>
       </div>
     </div>
+<Tiles/>
+    </>
   );
 }

@@ -3,18 +3,6 @@ import himalaya from '../assets/himalaya.jpg'
 import Card from './Card.jsx'
 
 export default function Pharmacy() {
-    // const brr=[
-    //     {
-    //         title:"Himalaya",
-    //         price:250
-    //     }];
-    // const [arr,setArr]=useState(brr)
-
-    // setArr((prev)=>{
-    //     [...prev,...brr]
-    // })
-
-    // console.log(arr)
     let objArr = [
         {
             title: 'himalaya',
