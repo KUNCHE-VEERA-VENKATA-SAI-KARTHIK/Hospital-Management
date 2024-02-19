@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import userContextprovider from "../context/userContextprovider";
+import { useContext } from "react";
 
 import c2 from "../assets/k2.png";
 import c1 from "../assets/c1.jpg";
@@ -8,8 +10,8 @@ import im2 from "../assets/im2.jpg";
 
 export default function Navbar() {
   return (
-    <div >
-      <div className="relative mb-2" >
+    <div>
+      <div className="relative mb-2">
         <div className="absolute ml-8 ">
           <img
             className="max-h-10  justify-items-start rounded-3xl mt-1"
@@ -26,9 +28,9 @@ export default function Navbar() {
             to="/"
           >
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <span className="nav-link active" aria-current="page" href="#">
                 Home
-              </a>
+              </span>
             </li>
           </NavLink>
           <NavLink
@@ -37,33 +39,47 @@ export default function Navbar() {
             }}
             to="Pharmacy"
           >
-          <li className="nav-item">
-            <a className="nav-link" href="#">
-              Pharmacy
-            </a>
-          </li>
+            <li className="nav-item">
+              <span className="nav-link" href="#">
+                Pharmacy
+              </span>
+            </li>
           </NavLink>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <span className="nav-link" href="#">
               Lab tests
-            </a>
+            </span>
           </li>
           <li className="nav-item">
-            <a className="nav-link " href="#" >Reports</a>
+            <span className="nav-link " href="#">
+              Reports
+            </span>
           </li>
+
           <NavLink
             className={({ isActive }) => {
               isActive ? "font-bold" : "normal";
             }}
-            to="Login">
-              <div className="absolute ml-[400px]">
+            to="Login"
+          >
+            <div className="absolute ml-[300px]">
               <li className="nav-item">
-              <a className="nav-link ">Login</a>
+                <span className="nav-link ">Login</span>
               </li>
-              </div>
-
+            </div>
           </NavLink>
-
+          <NavLink
+            className={({ isActive }) => {
+              isActive ? "font-bold" : "normal";
+            }}
+            to="Register"
+          >
+            <div className="absolute ml-[400px]">
+              <li className="nav-item">
+                <span className="nav-link ">Register</span>
+              </li>
+            </div>
+          </NavLink>
         </ul>
       </div>
     </div>

@@ -7,6 +7,7 @@ import { Route, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./components/Login.jsx";
 import Layout from "./components/Layout.jsx";
 import Pharmacy from "./components/Pharmacy.jsx";
+import Register from "./components/Register.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +23,12 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path:"Pharmacy",
-        element:<Pharmacy/>,
+        path: "Pharmacy",
+        element: <Pharmacy />,
+      },
+      {
+        path: "Register",
+        element: <Register />,
       },
     ],
   },
