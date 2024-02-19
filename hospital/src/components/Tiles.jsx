@@ -30,7 +30,7 @@ export default function Tiles() {
 
     </div>   
     
-    <div className='shadow-lg pt-10 pb-5 rounded'>
+    {/* <div className='shadow-lg pt-10 pb-5 rounded'>
         <div className='flex  content-center  justify-center ' >
             <img src={c4}  className='h-50 w-20'/>
         </div>
@@ -39,7 +39,7 @@ export default function Tiles() {
         </div>
 
     </div>   
-    
+     */}
     <div className='shadow-lg pt-10 pb-5 rounded mr-3'>
         <div className='flex  content-center  justify-center ' >
             <img src={c4}  className='h-50 w-20'/>
