@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
-import c2 from "../assets/k2.png";
+import mlogo from "../assets/mlogo.png";
 import c1 from "../assets/c1.jpg";
 import im1 from "../assets/im1.jpg";
 import im2 from "../assets/im2.jpg";
@@ -12,8 +12,8 @@ export default function Navbar() {
       <div className="relative mb-2" >
         <div className="absolute ml-8 ">
           <img
-            className="max-h-10  justify-items-start rounded-3xl mt-1"
-            src={c2}
+            className="max-h-12  justify-items-start rounded-3xl mt-1"
+            src={mlogo}
             alt="no image foound"
           />
         </div>
@@ -59,6 +59,18 @@ export default function Navbar() {
               <div className="absolute ml-[400px]">
               <li className="nav-item">
               <a className="nav-link ">Login</a>
+              </li>
+              </div>
+
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => {
+              isActive ? "font-bold" : "normal";
+            }}
+            to="Register">
+              <div className="absolute ml-[450px]">
+              <li className="nav-item">
+              <a className="nav-link ">Register</a>
               </li>
               </div>
 
