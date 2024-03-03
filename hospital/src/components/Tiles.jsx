@@ -1,6 +1,9 @@
 import React from 'react'
-import c4 from '../assets/child.png'
-
+import t1 from '../assets/t1.png'
+import t2 from '../assets/t2.png'
+import t3 from '../assets/t3.png'
+import t4 from '../assets/t4.png'
+import t5 from '../assets/t5.png'
 
 export default function Tiles() {
   return (
@@ -12,7 +15,7 @@ export default function Tiles() {
 
     <div className='shadow-lg pt-10 pb-5  pt-10 pb-5 ml-3 rounded'>
         <div className='flex  content-center  justify-center ' >
-            <img src={c4}  className='h-50 w-20'/>
+            <img src={t1}  className='h-50 w-20'/>
         </div>
         <div className='flex  content-center  justify-center '>
         <p>childcare</p>
@@ -22,30 +25,30 @@ export default function Tiles() {
     
     <div className='shadow-lg pt-10 pb-5 rounded'>
         <div className=' flex  content-center  justify-center ' >
-            <img src={c4}  className='h-50 w-20'/>
+            <img src={t2}  className='h-50 w-20'/>
         </div>
         <div className='flex  content-center  justify-center '>
-        <p>childcare</p>
+        <p>Pediatric Specialties</p>
         </div>
 
     </div>   
     
     <div className='shadow-lg pt-10 pb-5 rounded'>
         <div className='flex  content-center  justify-center ' >
-            <img src={c4}  className='h-50 w-20'/>
+            <img src={t3}  className='h-50 w-20'/>
         </div>
         <div className='flex  content-center  justify-center '>
-        <p>Neurology</p>
+        <p>Obstetrics</p>
         </div>
 
     </div>   
     
     <div className='shadow-lg pt-10 pb-5 rounded mr-3'>
         <div className='flex  content-center  justify-center ' >
-            <img src={c4}  className='h-50 w-20'/>
+            <img src={t4}  className='h-50 w-20'/>
         </div>
         <div className='flex  content-center  justify-center '>
-        <p>childcare</p>
+        <p>Gynecology</p>
         </div>
 
     </div>   
