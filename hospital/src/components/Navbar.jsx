@@ -1,14 +1,17 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import userContextprovider from "../context/userContextprovider";
+// import userContextprovider from "../context/userContextprovider";
 import { useContext } from "react";
 
 import c2 from "../assets/k2.png";
 import c1 from "../assets/c1.jpg";
 import im1 from "../assets/im1.jpg";
 import im2 from "../assets/im2.jpg";
+// import UserContext from "../context/Context.js";
 
 export default function Navbar() {
+  // const { uname } = useContext(UserContext);
+
   return (
     <div>
       <div className="relative mb-2">

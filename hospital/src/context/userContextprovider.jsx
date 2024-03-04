@@ -1,15 +1,15 @@
-import React from "react";
-import UserContext from "./context.js";
+// import React from "react";
+// import UserContext from "./Context.js";
 
-export default userContextprovider = ({ children }) => {
-  const [isloggedin, setIsloggedin] = useState(false);
-  const [uname, setUname] = useState("");
+// export default userContextprovider = ({ children }) => {
+//   const [isloggedin, setIsloggedin] = useState(false);
+//   const [uname, setUname] = useState("");
 
-  return (
-    <UserContext.Provider
-      value={{ isloggedin, setIsloggedin, uname, setUname }}
-    >
-      {children}
-    </UserContext.Provider>
-  );
-};
+//   return (
+//     <UserContext.Provider
+//       value={{ isloggedin, setIsloggedin, uname, setUname }}
+//     >
+//       {children}
+//     </UserContext.Provider>
+//   );
+// };
