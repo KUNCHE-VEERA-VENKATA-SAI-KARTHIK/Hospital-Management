@@ -1,4 +1,5 @@
 import React from "react";
+import {Link, NavLink } from "react-router-dom";
 
 export default function Login() {
   return (
@@ -80,8 +81,9 @@ export default function Login() {
             <a
               href="#"
               className="font-semibold leading-6 text-gray-600 hover:text-purple-600"
+             
             >
-              Register Now
+              <Link to="/Register">Register Now</Link>
             </a>
           </p>
         </div>

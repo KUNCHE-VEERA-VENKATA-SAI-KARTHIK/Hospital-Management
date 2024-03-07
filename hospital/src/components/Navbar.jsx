@@ -1,10 +1,8 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 
 import mlogo from "../assets/mlogo.png";
-import c1 from "../assets/c1.jpg";
-import im1 from "../assets/im1.jpg";
-import im2 from "../assets/im2.jpg";
 
 export default function Navbar() {
   return (

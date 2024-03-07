@@ -1,6 +1,8 @@
 import React from "react";
 import axios from 'axios'
 import { useState } from "react";
+import {Link, NavLink } from "react-router-dom";
+
 
 export default function Registration() {
     const[data,setData]=useState({
@@ -103,7 +105,7 @@ export default function Registration() {
                                 className="text-sm text-gray-600 underline hover:text-gray-900"
                                 href="#"
                             >
-                                Already registered?
+                                <Link to="/Login">Already registered?</Link>
                             </a>
                             <button
                                 type="submit"
