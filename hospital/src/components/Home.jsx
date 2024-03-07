@@ -4,7 +4,7 @@ import c1 from "../assets/c1.jpg";
 import im1 from "../assets/im1.jpg";
 import im2 from "../assets/im2.jpg";
 import Tiles from "./Tiles";
-
+import About from "./About";
 export default function Home() {
   return (
     <>
@@ -54,6 +54,7 @@ export default function Home() {
       </div>
     </div>
 <Tiles/>
+<About/>
     </>
   );
 }
