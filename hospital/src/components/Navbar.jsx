@@ -48,17 +48,24 @@ export default function Navbar() {
               </span>
             </li>
           </NavLink>
-          <li className="nav-item">
-            <span className="nav-link" href="#">
-              Lab tests
-            </span>
-          </li>
+          <NavLink
+            className={({ isActive }) => {
+              isActive ? "font-bold" : "normal";
+            }}
+            to="Labtest"
+          >
+            <li className="nav-item">
+              <span className="nav-link" href="#">
+                Lab tests
+              </span>
+            </li>
+          </NavLink>
           <li className="nav-item">
             <span className="nav-link " href="#">
               Reports
             </span>
           </li>
-
+          if(data)? <avatar /> :
           <NavLink
             className={({ isActive }) => {
               isActive ? "font-bold" : "normal";
@@ -77,28 +84,24 @@ export default function Navbar() {
             }}
             to="Register"
           >
-            <div className="absolute ml-[400px]">
+            <div className="absolute ml-[450px]">
               <li className="nav-item">
-                <span className="nav-link ">Register</span>
+                <a className="nav-link ">Register</a>
               </li>
             </div>
           </NavLink>
-<<<<<<< HEAD
-=======
           <NavLink
             className={({ isActive }) => {
               isActive ? "font-bold" : "normal";
             }}
-            to="Register">
-              <div className="absolute ml-[450px]">
+            to="Cart"
+          >
+            <div className="absolute ">
               <li className="nav-item">
-              <a className="nav-link ">Register</a>
+                <a className="nav-link  ">Cart</a>
               </li>
-              </div>
-
+            </div>
           </NavLink>
-
->>>>>>> d841195879e200f59e42b5db8267d7fb9d7c552e
         </ul>
       </div>
     </div>

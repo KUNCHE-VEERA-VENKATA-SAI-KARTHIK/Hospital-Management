@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 export default function Register() {
   const [user, setuser] = useState("");
@@ -26,8 +25,8 @@ export default function Register() {
   const handleSubmit = (data) => {
     console.log(data, "inside");
     axios
-      .put(
-        "https://hospital-fc931-default-rtdb.firebaseio.com/register.json",
+      .post(
+        `https://hospital-fc931-default-rtdb.firebaseio.com/register/${user}.json`,
         data
       )
       .then((response) => {
@@ -74,10 +73,6 @@ export default function Register() {
               <div className="mt-4">
                 <label
                   htmlFor="email"
-                  value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
                   className="block text-sm font-medium text-gray-700 undefined"
                 >
                   Email
@@ -86,6 +81,10 @@ export default function Register() {
                   <input
                     type="email"
                     name="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   />
                 </div>

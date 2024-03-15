@@ -7,11 +7,12 @@ import { Route, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./components/Login.jsx";
 import Layout from "./components/Layout.jsx";
 import Pharmacy from "./components/Pharmacy.jsx";
-<<<<<<< HEAD
+
+import Cart from "./components/Cart.jsx";
+import Labtest from "./components/Labtest.jsx";
 import Register from "./components/Register.jsx";
-=======
 import Registration from "./components/Registration.jsx";
->>>>>>> d841195879e200f59e42b5db8267d7fb9d7c552e
+import App from "./App.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,11 +33,16 @@ const router = createBrowserRouter([
       },
       {
         path: "Register",
-        element: <Register />,
+        element: <Registration />,
       },
       {
-        path:"Register",
-        element:<Registration/>,
+        path: "Labtest",
+        element: <Labtest />,
+      },
+
+      {
+        path: "Cart",
+        element: <Cart />,
       },
     ],
   },
@@ -44,6 +50,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <App />
   </React.StrictMode>
 );

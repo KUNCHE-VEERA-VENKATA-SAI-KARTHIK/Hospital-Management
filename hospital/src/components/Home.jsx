@@ -6,54 +6,55 @@ import im2 from "../assets/im2.jpg";
 import Tiles from "./Tiles";
 
 export default function Home() {
+  const [token, setToken] = useSate("");
+
   return (
     <>
-
-    <div>
-      {/* carosel */}
-      <div
-        id="carouselExampleAutoplaying"
-        className="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={c1} className="d-block w-100" alt="c2" />
+      <div>
+        {/* carosel */}
+        <div
+          id="carouselExampleAutoplaying"
+          className="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img src={c1} className="d-block w-100" alt="c2" />
+            </div>
+            <div className="carousel-item">
+              <img src={im1} className="d-block w-100" alt="im1" />
+            </div>
+            <div className="carousel-item">
+              <img src={im2} className="d-block w-100" alt="im2" />
+            </div>
           </div>
-          <div className="carousel-item">
-            <img src={im1} className="d-block w-100" alt="im1" />
-          </div>
-          <div className="carousel-item">
-            <img src={im2} className="d-block w-100" alt="im2" />
-          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="">Next</span>
+          </button>
         </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="">Next</span>
-        </button>
       </div>
-    </div>
-<Tiles/>
+      <Tiles />
     </>
   );
 }
