@@ -65,7 +65,7 @@ export default function Navbar() {
               Reports
             </span>
           </li>
-          if(data)? <avatar /> :
+          {/* if(data)? <avatar /> : */}
           <NavLink
             className={({ isActive }) => {
               isActive ? "font-bold" : "normal";
