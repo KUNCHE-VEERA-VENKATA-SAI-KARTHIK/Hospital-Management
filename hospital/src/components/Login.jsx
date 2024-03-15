@@ -1,7 +1,36 @@
 import React from "react";
-import {Link, NavLink } from "react-router-dom";
+import { useState } from "react";
+import supabase from "../supabase";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  let navigate = useNavigate();
+  const [formdata, setformData] = useState({
+    email: "",
+    password: "",
+  });
+  const { fullname, email, password, confirmPassword } = formdata;
+  const changeHandler = (e) => {
+    setformData({ ...formdata, [e.target.name]: e.target.value });
+  };
+  async function submitHandle() {
+    console.log(formdata, "initial");
+
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: formdata.email,
+        password: formdata.password,
+      });
+
+      console.log("final", data);
+
+      if (error) throw error;
+
+      console.log(data);
+    } catch (error) {
+      alert(error);
+    }
+  }
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -12,7 +41,7 @@ export default function Login() {
             alt="Your Company"
           /> */}
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-          Patient Portal
+            Patient Portal
           </h2>
         </div>
 
@@ -27,12 +56,11 @@ export default function Login() {
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
-                  name="email"
                   type="email"
-                  autoComplete="email"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  name="email"
+                  value={email}
+                  onChange={changeHandler}
+                  className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
               </div>
             </div>
@@ -56,25 +84,23 @@ export default function Login() {
               </div>
               <div className="mt-2">
                 <input
-                  id="password"
-                  name="password"
                   type="password"
-                  autoComplete="current-password"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  name="password"
+                  value={password}
+                  onChange={changeHandler}
+                  className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                 />
               </div>
             </div>
-
-            <div>
-              <button
-                type="submit"
-                className="flex w-full justify-center rounded-md bg-purple-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Sign in
-              </button>
-            </div>
           </form>
+          <div>
+            <button
+              onClick={submitHandle}
+              className="flex w-full justify-center rounded-md bg-purple-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Sign in
+            </button>
+          </div>
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Don't have an account?{" "}

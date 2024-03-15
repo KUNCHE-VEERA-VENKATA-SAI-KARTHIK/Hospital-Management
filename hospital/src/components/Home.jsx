@@ -6,6 +6,8 @@ import im2 from "../assets/im2.jpg";
 import Tiles from "./Tiles";
 import About from "./About";
 export default function Home() {
+  const [token, setToken] = useSate("");
+
   return (
     <>
 
