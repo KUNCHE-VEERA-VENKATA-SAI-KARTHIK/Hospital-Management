@@ -24,6 +24,8 @@ export default function Login() {
 
       console.log("final", data);
 
+
+
       if (error) throw error;
 
       console.log(data);

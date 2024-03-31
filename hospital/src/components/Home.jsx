@@ -4,9 +4,9 @@ import c1 from "../assets/c1.jpg";
 import im1 from "../assets/im1.jpg";
 import im2 from "../assets/im2.jpg";
 import Tiles from "./Tiles";
-
+import { useState } from "react";
 export default function Home() {
-  const [token, setToken] = useSate("");
+  const [token, setToken] = useState("");
 
   return (
     <>
