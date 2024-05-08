@@ -79,7 +79,9 @@ export default function Navbar() {
           </NavLink>
           {/* if(data)? <avatar /> : */}
           <div className="absolute ml-[1080px] bg-white border-none">
-          <Dropdown
+            <li>
+
+            <Dropdown
          label={<Avatar  className="bg-white white " rounded />}
           color="light"
           border="none"
@@ -115,6 +117,8 @@ export default function Navbar() {
               </NavLink> 
             </DropdownItem>
           </Dropdown>
+            </li>
+          
           </div>
 
         </ul>
