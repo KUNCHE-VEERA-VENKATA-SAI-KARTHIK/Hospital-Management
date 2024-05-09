@@ -25,6 +25,7 @@ export default function Labtest() {
     </div>
     <div  className="h-10">
     <div className="flex justify-center space-x-4 mt-4 mb-5">
+      <button>
       <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
         <div className="  content-center  justify-center ">
           <img src={FBC} className="h-2% w-14" />
@@ -33,6 +34,8 @@ export default function Labtest() {
           <p>Full Body Checkup</p>
         </div>
       </div>
+      </button>
+      <button>
       <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
         <div className="  content-center  justify-center ">
           <img src={diabetes} className="h-2% w-14" />
@@ -41,6 +44,8 @@ export default function Labtest() {
           <p>diabetes</p>
         </div>
       </div>
+      </button>
+      <button>
       <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
         <div className="  content-center  justify-center ">
           <img src={WOMENSHEALTH} className="h-2% w-14" />
@@ -49,6 +54,8 @@ export default function Labtest() {
           <p>Women's health</p>
         </div>
       </div>
+      </button>
+      <button>
       <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
         <div className="  content-center  justify-center ">
           <img src={Thyroid} className="h-2% w-14" />
@@ -57,6 +64,8 @@ export default function Labtest() {
           <p>Thyroid</p>
         </div>
       </div>
+      </button>
+      <button>
       <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
         <div className="  content-center  justify-center ">
           <img src={HealthPackage} className="h-2% w-14" />
@@ -65,6 +74,8 @@ export default function Labtest() {
           <p>Health Package</p>
         </div>
       </div>
+      </button>
+      <button>
       <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
         <div className="  content-center  justify-center ">
           <img src={Fever} className="h-2% w-14" />
@@ -73,10 +84,11 @@ export default function Labtest() {
           <p>Fever</p>
         </div>
       </div>
-
+      </button>
     </div>
 
 <div className="flex justify-center space-x-4 mt-4 mb-5">
+<button>
 <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
   <div className="  content-center  justify-center ">
     <img src={VITAMIN} className="h-2% w-14" />
@@ -85,6 +97,8 @@ export default function Labtest() {
     <p>Vitamin</p>
   </div>
 </div>
+</button>
+<button>
 <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
   <div className="  content-center  justify-center ">
     <img src={Blood} className="h-2% w-14" />
@@ -93,6 +107,8 @@ export default function Labtest() {
     <p>Blood Test</p>
   </div>
 </div>
+</button>
+<button>
 <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
   <div className="  content-center  justify-center ">
     <img src={Liver} className="h-2% w-14" />
@@ -101,6 +117,8 @@ export default function Labtest() {
     <p>Liver</p>
   </div>
 </div>
+</button>
+<button>
 <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
   <div className="  content-center  justify-center ">
     <img src={HAIRFALL} className="h-2% w-14" />
@@ -109,6 +127,8 @@ export default function Labtest() {
     <p>Hairfall</p>
   </div>
 </div>
+</button>
+<button>
 <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
   <div className="  content-center  justify-center ">
     <img src={Kidney} className="h-2% w-14" />
@@ -117,6 +137,8 @@ export default function Labtest() {
     <p>Kidney</p>
   </div>
 </div>
+</button>
+<button>
 <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
   <div className="  content-center  justify-center ">
     <img src={HORMONE} className="h-2% w-14" />
@@ -125,7 +147,7 @@ export default function Labtest() {
     <p>Harmone</p>
   </div>
 </div>
-
+</button>
 </div>
 </div>
 </>
