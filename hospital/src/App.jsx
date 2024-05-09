@@ -12,6 +12,7 @@ import Cart from "./components/Cart.jsx";
 import Labtest from "./components/Labtest.jsx";
 import Register from "./components/Register.jsx";
 import Registration from "./components/Registration.jsx";
+import Dashboard from "./components/Dashboard.jsx";
 
 function App() {
   const router = createBrowserRouter([
@@ -44,6 +45,10 @@ function App() {
           path: "Cart",
           element: <Cart />,
         },
+        {
+          path: "Dashboard",
+          element: <Dashboard />,
+        }
       ],
     },
   ]);

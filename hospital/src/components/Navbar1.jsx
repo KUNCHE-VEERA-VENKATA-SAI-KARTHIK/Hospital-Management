@@ -2,11 +2,11 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 // import userContextprovider from "../context/userContextprovider";
 import { useContext } from "react";
-import { Dropdown, DropdownItem } from 'flowbite-react';
-import { Avatar } from 'flowbite-react';
 
 import mlogo from "../assets/mlogo.png";
-
+import c1 from "../assets/c1.jpg";
+import im1 from "../assets/im1.jpg";
+import im2 from "../assets/im2.jpg";
 // import UserContext from "../context/Context.js";
 
 export default function Navbar() {
@@ -14,8 +14,8 @@ export default function Navbar() {
 
   return (
     <div>
-      <div className="relative mb-7">
-        <div className="absolute ml-8 ">
+      <div className="relative mb-2">
+        <div className="absolute ">
           <img
             className="max-h-12  justify-items-start rounded-3xl mt-1"
             src={mlogo}
@@ -65,6 +65,20 @@ export default function Navbar() {
               Reports
             </span>
           </li>
+          
+          <NavLink
+            className={({ isActive }) => {
+              isActive ? "font-bold" : "normal";
+            }}
+            to="Login"
+          >
+            <div className="absolute ml-[300px]">
+              <li className="nav-item">
+                <span className="nav-link ">Login</span>
+              </li>
+            </div>
+          </NavLink>
+          
           <NavLink
             className={({ isActive }) => {
               isActive ? "font-bold" : "normal";
@@ -77,50 +91,18 @@ export default function Navbar() {
               </li>
             </div>
           </NavLink>
-          {/* if(data)? <avatar /> : */}
-          <div className="absolute ml-[1080px] bg-white border-none">
-            <li>
-
-            <Dropdown
-         label={<Avatar  className="bg-blue black " rounded />}
-          color="light"
-          border="none"
-          className="w-full border-transparent"
-          dismissOnClick={false}
-          theme={{ floating: { target: "w-full" } }}>
-            <DropdownItem >
-                <NavLink
-                className={({ isActive }) => {
-                  isActive ? "font-bold" : "normal";
-                }}
-                to="Login"
-              >
-                <div>
-                  <li className="nav-item">
-                    <span className="nav-link ">Login</span>
-                  </li>
-                </div>
-              </NavLink>
-            </DropdownItem>
-            <DropdownItem>
-                <NavLink
-                className={({ isActive }) => {
-                  isActive ? "font-bold" : "normal";
-                }}
-                to="Register"
-              >
-                <div >
-                  <li className="nav-item">
-                    <a className="nav-link ">Register</a>
-                  </li>
-                </div>
-              </NavLink> 
-            </DropdownItem>
-          </Dropdown>
-            </li>
-          
-          </div>
-
+          <NavLink
+            className={({ isActive }) => {
+              isActive ? "font-bold" : "normal";
+            }}
+            to="Register"
+          >
+            <div className="absolute ">
+              <li className="nav-item">
+                <a className="nav-link  ">Register</a>
+              </li>
+            </div>
+          </NavLink>
         </ul>
       </div>
     </div>

@@ -17,13 +17,13 @@ export default function Card(props) {
       <div className="flex justify-center">
         <div className=" flex-col justify-center align-center text-blue-600 border-2 border-sky-500 bg-slate-100">
           <div>
-            <img className="ml-14 mr-10" src={props.image} />
+            <img className="w-25 h-25 text-center" src={props.image} />
           </div>
           <div>
             <p className="text-center ">{props.title}</p>
             <p className="text-center">Price : {props.price}</p>
           </div>
-          <div flex-wrap gap-1>
+          <div className="flex-wrap gap-1">
             <button
               type="button"
               onClick={() => {

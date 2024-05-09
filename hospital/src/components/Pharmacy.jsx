@@ -1,50 +1,53 @@
-import React, { useState } from 'react'
-import himalaya from '../assets/himalaya.jpg'
-import Card from './Card.jsx'
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 
-export default function Pharmacy() {
-    let objArr = [
-        {
-            title: 'himalaya',
-            price: 120,
-            image: himalaya
-        },
-        {
-            title: 'wow',
-            price: 150,
-            image: himalaya
-        },
-        {
-            title: 'patanjali',
-            price: 200,
-            image: himalaya
-        },
-        {
-            title: 'mamaearth',
-            price: 200,
-            image: himalaya
-        }
-    ];
-     
-    
+const Pharmacy = () => {
+  const [medicineData, setMedicineData] = useState(null);
+  const [error, setError] = useState(null);
 
+  const medicineName = 'prolyte'; // Replace with user input or dynamic value
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://medicine-name-and-details.p.rapidapi.com/',
+          {
+            params: {
+                medicineName: 'prolyte'
+                    
+            },
+            headers: {
+              'X-RapidAPI-Key': 'e631bd5615mshcf1bd37db534356p1445d7jsnaa9c527a9988',
+              'X-RapidAPI-Host': 'medicine-name-and-details.p.rapidapi.com',
+            },
+          }
+        );
+        setMedicineData(response.data);
+      } catch (error) {
+        setError(error);
+      }
+    };
+
+    fetchData();
+  }, [medicineName]); // Dependency array to refetch on medicineName change
+
+  if (error) {
+    return <div>Error fetching medicine details: {error.message}</div>;
+  }
+
+  if (!medicineData) {
+    return <div>Loading medicine details...</div>;
+  }
+
+  // Display medicine data here (replace with your component structure)
   return (
-    <>
-    <div className=' grid grid-cols-3 gap-4 justify-content-between mt-20'>
-        {
-            objArr.map((item) => {
-                console.log(item);
-                return(
-                    <>
-                <Card  image={item.image} title={item.title} price={item.price} />
-                </>
-                )
-            })
-           
-        }
+    <div>
+      <h1>{medicineData.name}</h1>
+      <p>{medicineData.description}</p>
+      {/* Add more details as needed */}
     </div>
+  );
+};
 
-    </>
-  )
-}
-
+export default Pharmacy;
