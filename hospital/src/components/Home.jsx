@@ -6,6 +6,7 @@ import im2 from "../assets/im2.jpg";
 import Tiles from "./Tiles";
 import { useState } from "react";
 import About from "./About";
+import Doctors from "./Doctors";
 export default function Home() {
   const [token, setToken] = useState("");
 
@@ -58,6 +59,7 @@ export default function Home() {
     </div>
 <Tiles/>
 <About/>
+<Doctors/>
     </>
   );
 }
