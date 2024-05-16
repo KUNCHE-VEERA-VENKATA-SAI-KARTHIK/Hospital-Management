@@ -110,8 +110,9 @@ export default function Login() {
             <a
               href="#"
               className="font-semibold leading-6 text-gray-600 hover:text-purple-600"
+             
             >
-              Register Now
+              <Link to="/Register">Register Now</Link>
             </a>
           </p>
         </div>

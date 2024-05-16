@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Home from "./components/Home.jsx";
+import  './App.css'
 
 import { Route, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./components/Login.jsx";
@@ -13,7 +14,7 @@ import Labtest from "./components/Labtest.jsx";
 import Register from "./components/Register.jsx";
 import Registration from "./components/Registration.jsx";
 import Dashboard from "./components/Dashboard.jsx";
-
+import Docdashboard from "./components/Docdashboard.jsx";
 function App() {
   const router = createBrowserRouter([
     {
@@ -48,7 +49,15 @@ function App() {
         {
           path: "Dashboard",
           element: <Dashboard />,
+        },
+        {
+          path:"Docdashboard",
+          element: <Docdashboard/>,
         }
+        // {
+        //   path: "Logout",
+        //   element: <Logout />,
+        // },
       ],
     },
   ]);

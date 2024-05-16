@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { Dropdown, DropdownItem } from 'flowbite-react';
 import { Avatar } from 'flowbite-react';
 
+
+
 import mlogo from "../assets/mlogo.png";
 
 // import UserContext from "../context/Context.js";
@@ -82,10 +84,10 @@ export default function Navbar() {
             <li>
 
             <Dropdown
-         label={<Avatar  className="bg-blue black " rounded />}
+         label={<Avatar  className="bg-white white " rounded />}
           color="light"
           border="none"
-          className="w-full border-transparent"
+          className="w-full	border-transparent"
           dismissOnClick={false}
           theme={{ floating: { target: "w-full" } }}>
             <DropdownItem >
