@@ -15,6 +15,7 @@ import Register from "./components/Register.jsx";
 import Registration from "./components/Registration.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import Docdashboard from "./components/Docdashboard.jsx";
+import Docdetails from "./components/Docdetails.jsx";
 function App() {
   const router = createBrowserRouter([
     {
@@ -53,11 +54,11 @@ function App() {
         {
           path:"Docdashboard",
           element: <Docdashboard/>,
-        }
-        // {
-        //   path: "Logout",
-        //   element: <Logout />,
-        // },
+        },
+        {
+          path: "Docdetails",
+          element: <Docdetails/>,
+        },
       ],
     },
   ]);

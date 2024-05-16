@@ -13,6 +13,7 @@ import Labtest from "./components/Labtest.jsx";
 import Register from "./components/Register.jsx";
 import Registration from "./components/Registration.jsx";
 import App from "./App.jsx";
+import Docdetails from "./components/Docdetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,12 +45,16 @@ const router = createBrowserRouter([
         path: "Cart",
         element: <Cart />,
       },
+      {
+        path: "Docdetails",
+        element: <Docdetails />,
+      },
     ],
   },
 ]);
-
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  
 );
