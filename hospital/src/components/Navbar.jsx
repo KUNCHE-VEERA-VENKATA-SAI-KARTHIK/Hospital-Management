@@ -1,18 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 // import userContextprovider from "../context/userContextprovider";
-import { useContext } from "react";
+
 import { Dropdown, DropdownItem } from 'flowbite-react';
 import { Avatar } from 'flowbite-react';
 
 
 
-import mlogo from "../assets/mlogo.png";
 
-// import UserContext from "../context/Context.js";
+import mlogo from "../assets/mlogo.png";
+ 
+import UserContext from "../context/Context.js";
 
 export default function Navbar() {
-  // const { uname } = useContext(UserContext);
+  const [isloggedin,setIsloggedin]=useState(false);
+
+  useEffect(() => {
+    if(sessionStorage.getItem("email"))
+      {
+        setIsloggedin(true);
+      }
+      else{
+        setIsloggedin(false);
+      }
+    
+    
+  },[sessionStorage.getItem("email")])
+
+  function logout()
+  {
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("password");
+    setIsloggedin(false);
+  }
 
   return (
     <div>
@@ -82,8 +102,9 @@ export default function Navbar() {
           {/* if(data)? <avatar /> : */}
           <div className="absolute ml-[1080px] bg-white border-none">
             <li>
-
-            <Dropdown
+        
+        
+         <Dropdown
          label={<Avatar  className="bg-white white " rounded />}
           color="light"
           border="none"
@@ -119,6 +140,7 @@ export default function Navbar() {
               </NavLink> 
             </DropdownItem>
           </Dropdown>
+       
             </li>
           
           </div>

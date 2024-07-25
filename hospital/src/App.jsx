@@ -15,6 +15,8 @@ import Register from "./components/Register.jsx";
 import Registration from "./components/Registration.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import Docdashboard from "./components/Docdashboard.jsx";
+import DocLogin from "./components/DocLogin.jsx";
+import HealthBot from "./components/HealthBot.jsx";
 function App() {
   const router = createBrowserRouter([
     {
@@ -53,6 +55,14 @@ function App() {
         {
           path:"Docdashboard",
           element: <Docdashboard/>,
+        }
+        ,{
+          path:"DocLogin",
+          element:<DocLogin/>
+        },
+        {
+          path:"HealthBot",
+          element:<HealthBot/>,
         }
         // {
         //   path: "Logout",

@@ -1,16 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect,useState } from "react";
 import coup from "../assets/coup.png";
 import Tabs from "./Tabs";
 import santoor from "../assets/santoor.jpeg";
 import paracetmol from "../assets/para.jpeg";
+import UserContext from "../context/Context";
 // import axios from axios;
 
 export default function Cart() {
-  // const data =useEffect(()=>
-  // {
-  //   axios.get(`https://hospital-fc931-default-rtdb.firebaseio.com/register/${user}.json`)
-  // },[])
+  const [isloggedin,setIsloggedin]=useState(false);
 
+  const [data,setData]=useState(null);
+
+  
+
+  useEffect(() => {
+    if(sessionStorage.getItem("email"))
+      {
+        setIsloggedin(true);
+      }
+      else{
+        setIsloggedin(false);
+      }
+    
+    
+  },[sessionStorage.getItem("email")])
+
+
+  
+
+  if(!isloggedin){
+    return <h1 className="text-center ">please login </h1>
+  }
+  else{
+ 
   return (
     <div className="flex gap-3 mt-3">
       <div className="flex-1 border">
@@ -92,4 +114,5 @@ export default function Cart() {
       </div>
     </div>
   );
+}
 }

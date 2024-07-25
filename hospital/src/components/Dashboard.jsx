@@ -1,13 +1,44 @@
-import React from 'react'
+import React, { useContext ,useState,useEffect} from 'react'
 import RadialBar from './RadialBar'
+import UserContext from '../context/Context'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function Dashboard() {
-  return (
-    <>
+  let  navigate= useNavigate()
+  
+  const [isloggedin,setIsloggedin]=useState(false);
+  const [username,setUsername]=useState();
+
+  useEffect(() => {
+    if(sessionStorage.getItem("email"))
+      {
+        setIsloggedin(true);
+        setUsername(sessionStorage.getItem("username"));
+      }
+      else{
+        setIsloggedin(false);
+      }
+    
+    
+  },[sessionStorage.getItem("email")])
+    if (!isloggedin) {
+        return (
+            <div>
+        <h1 className='text-center'>Please Login</h1>
+        <h2>go to login page </h2> <button onClick={navigate("\Login")}>login</button>        </div>
+    )
+    }
+    else{
+        
+          return (
+     <>
+    
     <div className='text-center'>
       <h1 className=" underline font-bold text-center py-5  ">
         DASHBOARD
       </h1>
+      <h2>WELCOME {username}</h2>
       <div className='flex text-center align items-center'>
 
         <RadialBar/>
@@ -15,6 +46,7 @@ export default function Dashboard() {
     </div>
 
 <div>
+    
 <h1 className=" underline font-bold text-center py-5">
         PRESCRIPTION
       </h1>
@@ -72,4 +104,5 @@ export default function Dashboard() {
 </>
     
   )
+}
 }
