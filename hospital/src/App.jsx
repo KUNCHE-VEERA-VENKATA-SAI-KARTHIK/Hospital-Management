@@ -16,6 +16,7 @@ import Registration from "./components/Registration.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import Docdashboard from "./components/Docdashboard.jsx";
 import Docdetails from "./components/Docdetails.jsx";
+import Reports from "./components/Reports.jsx";
 function App() {
   const router = createBrowserRouter([
     {
@@ -58,6 +59,10 @@ function App() {
         {
           path: "Docdetails",
           element: <Docdetails/>,
+        },
+        {
+          path: "Reports",
+          element: <Reports />,
         },
       ],
     },

@@ -26,9 +26,11 @@ export default function Labtest() {
     <div  className="h-10">
     <div className="flex justify-center space-x-4 mt-4 mb-5">
       <button>
-      <div className=" flex border pt-2 pb-2 pl-10 pr-10 rounded">
+      <div className=" relative  flex border pt-2 pb-2 pl-10 pr-10 rounded">
         <div className="  content-center  justify-center ">
+        <a class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300" >
           <img src={FBC} className="h-2% w-14" />
+        </a>
         </div>
         <div className="pl-3 content-center  justify-center ">
           <p>Full Body Checkup</p>

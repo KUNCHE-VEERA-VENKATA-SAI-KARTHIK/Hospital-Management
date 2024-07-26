@@ -62,11 +62,18 @@ export default function Navbar() {
               </span>
             </li>
           </NavLink>
+          <NavLink
+            className={({ isActive }) => {
+              isActive ? "font-bold" : "normal";
+            }}
+            to="Reports"
+          >
           <li className="nav-item">
             <span className="nav-link " href="#">
               Reports
             </span>
           </li>
+          </NavLink>
           <NavLink
             className={({ isActive }) => {
               isActive ? "font-bold" : "normal";

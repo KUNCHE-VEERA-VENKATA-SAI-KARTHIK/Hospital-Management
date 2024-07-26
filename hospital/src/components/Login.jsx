@@ -4,6 +4,11 @@ import supabase from "../supabase";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const[username,setUsername]=useState("")
+  const[dpassword,setDpassword]=useState("")
+  function handlechange(e){
+    setUsername(e.target.value)
+  }
   let navigate = useNavigate();
   const [formdata, setformData] = useState({
     email: "",
@@ -14,8 +19,6 @@ export default function Login() {
     setformData({ ...formdata, [e.target.name]: e.target.value });
   };
   async function submitHandle() {
-    console.log(formdata, "initial");
-
     try {
       const { data, error } = await supabase.auth.signInWithPassword({
         email: formdata.email,
@@ -36,6 +39,7 @@ export default function Login() {
   }
   return (
     <>
+    <div className="flex flex-row">
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           {/* <img
@@ -99,7 +103,7 @@ export default function Login() {
           <div>
             <button
               onClick={submitHandle}
-              className="flex w-full justify-center rounded-md bg-purple-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="flex w-full justify-center rounded-md bg-purple-600 px-3  py-1.5 mt-4 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Sign in
             </button>
@@ -117,6 +121,71 @@ export default function Login() {
           </p>
         </div>
       </div>
+
+
+      <span className=" border-slate-500 border-r-2  mt-5"></span>
+
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 pt-3">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm pt-0">
+          <h2 className="mt-0 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+            Doctor Portal
+          </h2>
+        </div>
+
+        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          <form className="space-y-6" action="#" method="POST">
+            <div>
+              <label
+                htmlFor="username"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                User Name
+              </label>
+              <div className="mt-2">
+                <input
+                  type="text"
+                  name="username"
+                  value={username}
+                  onChange={handlechange}
+                  className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div className="flex items-center justify-between">
+                <label
+                  htmlFor="dpassword"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
+                  Password
+                </label>
+
+              </div>
+              <div className="mt-2">
+                <input
+                  type="password"
+                  name="dpassword"
+                  value={dpassword}
+                  onChange={handlechange}
+                  className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                />
+              </div>
+            </div>
+          </form>
+          <div>
+            <button
+              onClick={submitHandle}
+              className="flex w-full justify-center rounded-md bg-purple-600 px-3 py-1.5 mt-4 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Sign in
+            </button>
+          </div>
+
+         
+        </div>
+      </div>
+    </div>
     </>
   );
 }

@@ -14,7 +14,7 @@ import Register from "./components/Register.jsx";
 import Registration from "./components/Registration.jsx";
 import App from "./App.jsx";
 import Docdetails from "./components/Docdetails.jsx";
-
+import Reports from "./components/Reports.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "Docdetails",
         element: <Docdetails />,
+      },
+      {
+        path: "Reports",
+        element: <Reports />,
       },
     ],
   },
