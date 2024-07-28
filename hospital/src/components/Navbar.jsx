@@ -15,8 +15,8 @@ export default function Navbar() {
   // const { uname } = useContext(UserContext);
 
   return (
-    <div>
-      <div className="relative mb-7">
+    <div className="">
+      <div className=" fixed z-1 relative mb-7">
         <div className="absolute ml-8 ">
           <img
             className="max-h-12  justify-items-start rounded-3xl mt-1"
