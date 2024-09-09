@@ -1,22 +1,24 @@
 import React from 'react'
 import doc1 from "../assets/doc1.jpg"
 import  {useState} from "react"; 
-import Datepicker from "react-tailwindcss-datepicker"; 
-import TimePicker from 'react-time-picker';
-import 'react-time-picker/dist/TimePicker.css';
-import 'react-clock/dist/Clock.css';
+import dayjs from 'dayjs';
+import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { DesktopDateTimePicker } from '@mui/x-date-pickers/DesktopDateTimePicker';
 
 export default function Docdetails() {
-    const [value1, onChange] = useState('10:00');
-    const [value, setValue] = useState({ 
-        startDate: null ,
-        endDate: null 
-        }); 
+    // const [value1, onChange] = useState('10:00');
+    // const [value, setValue] = useState({ 
+    //     startDate: null ,
+    //     endDate: null 
+    //     }); 
         
-        const handleValueChange = (newValue) => {
-        console.log("newValue:", newValue); 
-        setValue(newValue); 
-        } 
+    //     const handleValueChange = (newValue) => {
+    //     console.log("newValue:", newValue); 
+    //     setValue(newValue); 
+    //     } 
         
   return (
     <>
@@ -49,19 +51,21 @@ export default function Docdetails() {
                 Book Hospital Visit
             </p>
             <p className='m-4'>Available from tomorrow 10 am</p>
-            <div className='m-4 '> 
-            <Datepicker 
-                useRange={false} 
-                asSingle={true} 
-                value={value} 
-                onChange={handleValueChange} 
-                /> 
+            <div className='m-0 '> 
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DemoContainer
+                components={[
+                'DesktopDateTimePicker'
+                ]}
+                >
+                <DemoItem className='ml-12' label="Pick Date and Time">
+                <DesktopDateTimePicker defaultValue={dayjs('2022-04-17T15:30')} />
+                </DemoItem>
+                </DemoContainer>
+                </LocalizationProvider>
 
             </div>
-            <div className='m-4 pr-6 pb-2'>
-            <TimePicker onChange={onChange} value={value1} />
-            </div>
-            <button className=' border 4 mr-4'>Book Appointment Now</button>
+            <button className=' mt-4 border 4 mr-4'>Book Appointment Now</button>
         </div>
     </div>
     </div>
